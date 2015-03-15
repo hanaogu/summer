@@ -40,7 +40,30 @@ Ext.onReady(function () {
           },
           Ext.create('KitchenSink.view.formtags', {
             title: 'Formtags'
-          })]
+          }),
+//          {
+//            title: 'robot',
+//            xtype: 'panel',
+//            id: 'idrobottab',
+//            listeners: {
+//              'render': function() {
+//                Ext.Ajax.request({
+//                  url: 'test/robot.html',
+//                  success: function(response) {
+//                    Ext.getCmp('idrobottab').update(response.responseText);
+//                  }
+//                });
+//              }
+//            }
+//          },
+          {
+            title: 'robot',
+            xtype: 'panel',
+            autoEl: {
+              tag: 'iframe',
+              src: 'test/robot.html'
+            }
+          }]
       }]
   });
 });

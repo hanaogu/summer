@@ -52,5 +52,9 @@ Ext.define('KitchenSink.view.formtags', {
         text: 'OK'
     }, {
         text: 'Cancel'
-    }]
-})
+    }],
+  initComponent: function () {
+    console.log('init formtags');
+    this.callParent();
+  }
+});
