@@ -14,4 +14,22 @@ router.get('/test', function(req, res, next) {
   res.end();
 });
 
+router.get('/logo', function(req, res, next) {
+  var logo = {};
+  logo.url = 'images/logo.png';
+  logo.title = '小微企业ERP云平台';
+  logo.href = 'http://minierp.hhwy.org/minierp';
+  res.send(logo);
+  res.end();
+});
+
+router.get('/user', function(req, res, next) {
+  var user = {};
+  user.photo = 'images/user.jpg';
+  user.name = '孙敏杰';
+  res.send(user);
+  res.end();
+});
+
+
 module.exports = router;
