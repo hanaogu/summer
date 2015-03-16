@@ -9,7 +9,7 @@ Ext.define('Summer.view.Navigation', {
     pack: 'start'
   },
   width: 250,
-  title: 'Tree',
+  title: '功能导航',
   region: 'west',
   defaults: {
     frame: true,
