@@ -15,12 +15,12 @@ Ext.define('Summer.view.LogoTitle', {
         var logo = Ext.JSON.decode(res.responseText);
         var img = Ext.create('Ext.Img', {
           src: logo.url,
-          padding: '12px 0 0 42px',
+          cls: 'logo',
         });
         me.add(img);
         var title = Ext.create('Ext.Component', {
           html: logo.title,
-          cls: 'logo',
+          cls: 'title',
         });
         me.add(title);
         me.getEl().dom.href = logo.href;
