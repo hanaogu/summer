@@ -2,6 +2,7 @@ Ext.define('Summer.view.LogoTitle', {
   extend: 'Ext.container.Container',
   xtype: 'logotitle',
   layout: 'column',
+  height: '100%',
   autoEl: {
     tag: 'a',
     href: '#'
@@ -12,30 +13,17 @@ Ext.define('Summer.view.LogoTitle', {
       url: 'logo',
       success: function (res) {
         var logo = Ext.JSON.decode(res.responseText);
-
         var img = Ext.create('Ext.Img', {
           src: logo.url,
-          padding: '12 0 0 30',
-          autoEl: {
-            tag: 'a',
-            href: logo.href
-          }
+          padding: '12px 0 0 42px',
         });
         me.add(img);
-
         var title = Ext.create('Ext.Component', {
           html: logo.title,
           cls: 'logo',
-          autoEl: {
-            tag: 'a',
-            href: logo.href
-          }
         });
         me.add(title);
-        console.log(me.autoEl);
-        me.autoEl.href = logo.href;
-        console.log(me.autoEl);
-        console.log(me);
+        me.getEl().dom.href = logo.href;
       }
     });
     this.callParent();
@@ -83,56 +71,7 @@ Ext.define('Summer.view.TitleBar', {
     },
     {
       xtype: 'userinfo',
-      style: 'float: right; border: 0; background: none; margin: 0 0 0 0'
+      style: 'float: right; border: 0; padding: 0 42px 0 0;background: none; margin: 0 0 0 0'
     }
-//    {
-//      xtype: 'toolbar',
-//      border: 0,
-//      style: 'float:right;margin:5px 0 0 0;background:none;',
-//      items: [
-//        {
-//          xtype: 'textfield',
-//          emptyText: '输入查询条件',
-//          width: 260,
-//        },
-//        {
-//          text: '搜索',
-//          icon: 'images/zoom.png',
-//          margin: '0 60% 0 0',
-//          handler: function () {
-//            var na = me.down('#name').getValue();
-//            if (na == null) na = '';
-//            me.store.proxy.extraParams.name = na;
-//            me.store.reload();
-//          }
-//        },
-//        '->',
-//        {
-//          icon: 'images/user.png',
-//          //text: '用户：管理员',
-//          menu: [
-//            {
-//              icon: 'images/save.gif',
-//              text: '个人信息'
-//            },
-//            '-',
-//            {
-//              icon: 'images/calendar.gif',
-//              text: '修改密码'
-//            },
-//            {
-//              icon: 'images/exit.png',
-//              text: '退出系统',
-//              handler: function () {
-//                Ext.MessageBox.confirm('系统提示', '确定要退出吗？',
-//                  function (a) {
-//                    if (a == 'yes') {
-//                      alert('退出成功');
-//                    }
-//                  });
-//              }
-//            }]
-//        }]
-//    }
   ]
 });
