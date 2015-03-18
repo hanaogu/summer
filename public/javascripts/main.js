@@ -19,14 +19,27 @@ var westPanel = Ext.create('Ext.tab.Panel', {
   ]
 });
 
+var dashboard = Ext.create('Ext.dashboard.Dashboard', {
+  title: '工作台',
+  items: [
+    {
+      xtype: 'panel',
+      title: 'dddd',
+      html:'dddd',
+    },
+    {
+      xtype: 'panel',
+      title: 'dddd',
+      html:'aaaa',
+    }
+  ]
+});
+
 var centerPanel = Ext.create('Ext.tab.Panel', {
   region: 'center',
   activeTab: 0,
   items: [
-    {
-      title: 'Default Tab',
-      html: 'The first tab\'s content. Others may be added dynamically'
-    },
+    dashboard,
     {
       title: 'FormTag',
       loader: {
