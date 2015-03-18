@@ -22,7 +22,7 @@ Ext.define('Summer.view.LogoTitle', {
           cls: 'title',
         });
         loader.getTarget().add(title);
-      loader.getTarget().getEl().dom.href = logo.href;
+      //loader.getTarget().getEl().dom.href = logo.href;
       return true;
     }
   }

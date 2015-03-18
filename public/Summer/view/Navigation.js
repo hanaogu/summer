@@ -1,45 +1,32 @@
 Ext.define('Summer.view.Navigation', {
   extend: 'Ext.panel.Panel',
   xtype: 'navtree',
-  collapsible: true,
-  split: true,
-  layout: {
-    type: 'vbox',
-    align: 'stretch',
-    pack: 'start'
+  layout: 'accordion',
+  initComponent: function() {
+    this.callParent();
+    this.getLoader().load({url: this.loadurl});
   },
-  width: 250,
-  title: '功能导航',
-  region: 'west',
-  defaults: {
-    frame: true,
-    bodyPadding: 0
-  },
-  items: {
-    xtype: 'treepanel',
-    root: {
-      text: 'Root',
-      expanded: true,
-      children: [
-        {
-          text: 'Child 1',
-          leaf: true
-            },
-        {
-          text: 'Child 2',
-          leaf: true
-            },
-        {
-          text: 'Child 3',
-          expanded: true,
-          children: [
-            {
-              text: 'Grandchild',
-              leaf: true
-                    }
-                ]
-            }
-        ]
+  loader: {
+    renderer: function(loader, res, act) {
+      var navs = Ext.JSON.decode(res.responseText);
+      var me = loader.getTarget();
+      Ext.each(navs, function(nav) {
+        var tree = Ext.create('Ext.tree.Panel', {
+          title: nav.name,
+          rootVisible: false,
+        });
+        Ext.each(nav.fn, function(fn) {
+          tree.getStore().add({
+            id: fn.id,
+            text: fn.text,
+            icon: fn.icon,
+            url: fn.url,
+            leaf: true,
+          });
+        });
+        me.add(tree);
+      });
+      return true;
     }
   }
 });

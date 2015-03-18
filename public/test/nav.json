@@ -1,0 +1,40 @@
+[
+  {
+    "id": "OA",
+    "name": "日常办公",
+    "icon": "images/oa.png",
+    "fn": [
+      {
+        "id": "001-01",
+        "text": "任务",
+        "icon": "images/grid.png",
+        "url": "js/gridss.js"
+      },
+      {
+        "id": "001-02",
+        "text": "通讯录",
+        "icon": "images/calendar.gif",
+        "url": "js/dept.js"
+      }
+    ]
+  },
+  {
+    "id": "HR",
+    "name": "人力资源",
+    "icon": "images/hr.png",
+    "fn": [
+      {
+        "id": "002-01",
+        "text": "考勤统计",
+        "icon": "images/grid.png",
+        "url": "js/gridss.js"
+      },
+      {
+        "id": "002-02",
+        "text": "员工档案",
+        "icon": "images/calendar.gif",
+        "url": "js/dept.js"
+      }
+    ]
+  },
+]

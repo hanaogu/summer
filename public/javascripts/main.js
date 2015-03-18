@@ -7,7 +7,14 @@ Ext.onReady(function () {
       Ext.create('Summer.view.TitleBar', {
         region: 'north'
       }),
-      Ext.create('Summer.view.Navigation'),
+      Ext.create('Summer.view.Navigation', {
+        region: 'west',
+        collapsible: true,
+        split: true,
+        width: 250,
+        title: '功能导航',
+        loadurl: 'test/nav.json'
+      }),
       {
         region: 'south',
         title: 'South Panel',
