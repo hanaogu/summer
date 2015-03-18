@@ -43,6 +43,25 @@ var centerPanel = Ext.create('Ext.tab.Panel', {
   ]
 });
 
+Summer.addTabs = function(id, name, url, icon) {
+  if (Ext.getCmp(id)) {
+    centerPanel.setActiveTab(id);
+    return ;
+  }
+  var tab = Ext.create('Ext.panel.Panel', {
+    id: id,
+    title: name,
+    icon: icon,
+    closable: true,
+    loader: {
+      url: url,
+      autoLoad: true,
+      renderer: 'component'
+    }
+  });
+  centerPanel.add(tab).show();
+};
+
 Ext.onReady(function () {
   Ext.create('Ext.container.Viewport', {
     layout: 'border',

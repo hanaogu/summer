@@ -8,7 +8,7 @@
         "id": "001-01",
         "text": "任务",
         "icon": "images/grid.png",
-        "url": "js/gridss.js"
+        "url": "KitchenSink/FormTag.js"
       },
       {
         "id": "001-02",
