@@ -1,6 +1,6 @@
 Ext.require(['KitchenSink.model.State']);
 
-Ext.define('KitchenSink.view.formtags', {
+Ext.define('KitchenSink.view.FormTag', {
     extend: 'Ext.panel.Panel',
     xtype: 'form-tag',
 
@@ -54,7 +54,6 @@ Ext.define('KitchenSink.view.formtags', {
         text: 'Cancel'
     }],
   initComponent: function () {
-    console.log('init formtags');
     this.callParent();
   }
 });

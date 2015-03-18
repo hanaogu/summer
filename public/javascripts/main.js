@@ -1,10 +1,5 @@
 Ext.BLANK_IMAGE_URL = 'images/white.gif'; //定义空白图片（防止没有联网，图标出不来）
 
-Ext.require([
-  'KitchenSink.view.*',
-  'Summer.view.*'
-  ]);
-
 Ext.onReady(function () {
   Ext.create('Ext.container.Viewport', {
     layout: 'border',
@@ -38,14 +33,21 @@ Ext.onReady(function () {
             title: 'Default Tab',
             html: 'The first tab\'s content. Others may be added dynamically'
           },
-          Ext.create('KitchenSink.view.formtags', {
-            title: 'Formtags'
-          }),
+          {
+            title: 'FormTag',
+            loader: {
+              url: 'KitchenSink/FormTag.js',
+              autoLoad: true,
+              renderer: 'component'
+            }
+          },
           {
             title: 'robot',
             xtype: 'panel',
             html: '<iframe width="100%" height="100%" src="test/robot.html"></iframe>',
-          }]
-      }]
+          }
+        ]
+      }
+    ]
   });
 });

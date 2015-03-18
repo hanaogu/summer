@@ -7,26 +7,24 @@ Ext.define('Summer.view.LogoTitle', {
     tag: 'a',
     href: '#'
   },
-  initComponent: function () {
-    var me = this;
-    Ext.Ajax.request({
-      url: 'logo',
-      success: function (res) {
-        var logo = Ext.JSON.decode(res.responseText);
-        var img = Ext.create('Ext.Img', {
+  loader: {
+    url: 'logo',
+    autoLoad: true,
+    renderer: function(loader, response, active) {
+      var logo = Ext.JSON.decode(response.responseText);
+      var img = Ext.create('Ext.Img', {
           src: logo.url,
           cls: 'logo',
         });
-        me.add(img);
-        var title = Ext.create('Ext.Component', {
+      loader.getTarget().add(img);
+      var title = Ext.create('Ext.Component', {
           html: logo.title,
           cls: 'title',
         });
-        me.add(title);
-        me.getEl().dom.href = logo.href;
-      }
-    });
-    this.callParent();
+        loader.getTarget().add(title);
+      loader.getTarget().getEl().dom.href = logo.href;
+      return true;
+    }
   }
 });
 
@@ -34,25 +32,23 @@ Ext.define('Summer.view.UserInfo', {
   extend: 'Ext.container.Container',
   xtype: 'userinfo',
   layout: 'column',
-  initComponent: function () {
-    var me = this;
-    Ext.Ajax.request({
-      url: 'user',
-      success: function (res) {
-        var user = Ext.JSON.decode(res.responseText);
-        var img = Ext.create('Ext.Img', {
+  loader: {
+    url: 'user',
+    autoLoad: true,
+    renderer: function(loader, response, active) {
+      var user = Ext.JSON.decode(response.responseText);
+      var img = Ext.create('Ext.Img', {
           src: user.photo,
           imgCls: 'userphoto'
         });
-        me.add(img);
+        loader.getTarget().add(img);
         var username = Ext.create('Ext.Component', {
           html: user.name,
           cls: 'username'
         });
-        me.add(username);
-      }
-    });
-    this.callParent();
+        loader.getTarget().add(username);
+      return true;
+    }
   }
 });
 
