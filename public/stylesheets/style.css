@@ -32,3 +32,44 @@
   border: 2px solid #FFF;
   max-width: 34px;
 }
+
+.user_info {
+  background: #438EB9;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  margin: 0;
+}
+
+.user_info.x-btn-over {
+  background: #579EC8;
+  border: 0;
+}
+
+.user_info.x-btn-menu-active.x-btn-default-medium {
+  background: #579EC8;
+  border: 0;
+}
+
+.user_menu {
+  border-radius: 100%;
+  border: 2px solid #fff;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.menu_list {
+  background: #579EC8;
+  border: none;
+}
+
+.menu_list span {
+  color: #fff;
+}
+
+.x-menu-default{border:none;}
