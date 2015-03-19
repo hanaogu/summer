@@ -14,7 +14,7 @@
         "id": "001-02",
         "text": "通讯录",
         "icon": "images/calendar.gif",
-        "url": "js/dept.js"
+        "url": "Summer/grid.js"
       }
     ]
   },
