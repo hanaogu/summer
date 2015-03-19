@@ -32,22 +32,18 @@ Ext.define('Summer.view.UserInfo', {
   extend: 'Ext.button.Button',
   xtype: 'userinfo',
   cls: 'user_info',
-  iconCls: 'user_menu',
+  iconCls: 'user_photo',
   scale: 'medium',
-  icon: 'images/user.jpg',
   loader: {
     url: 'user',
     autoLoad: true,
     renderer: function (loader, response, active) {
       var user = Ext.JSON.decode(response.responseText);
       var me = loader.getTarget();
-      //me.setIcon(user.photo);
+      me.setIcon(user.photo);
       console.log(user.photo);
       me.setText(user.name);
-      me.setMenu([Ext.create('Ext.menu.Menu', {
-        width: 128,
-        floating: false,
-        items: [
+      me.setMenu([
           {
             cls: 'menu_list',
             text: '个人主页',
@@ -74,8 +70,7 @@ Ext.define('Summer.view.UserInfo', {
                   }
                 });
             }
-          }]
-      })], false);
+          }])
       return true;
     }
   }
@@ -84,19 +79,19 @@ Ext.define('Summer.view.UserInfo', {
 Ext.define('Summer.view.TitleBar', {
   extend: 'Ext.panel.Panel',
   xtype: 'titlebar',
-  layout: 'column',
+  layout: 'border',
   region: 'north',
   border: 0,
-  height: 42,
+  height: 46,
   bodyStyle: 'background: #438EB9',
   items: [
     {
       xtype: 'logotitle',
-      region: 'west'
+      region: 'west',
     },
     {
       xtype: 'userinfo',
-      style: 'float: right; border: 0'
+      region: 'east',
     }
   ]
 });
