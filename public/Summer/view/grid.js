@@ -1,8 +1,7 @@
 //定义Ext.wd.grid 方法
 
-Ext.define('Summer.view.grid',{
+Ext.define('Summer.view.Grid',{
 	extend: 'Ext.grid.Panel',	//继承
-	region:'center',
 	onDestroy:function(){
 		Ext.destroy(this.win);
 		this.callParent();
@@ -99,7 +98,7 @@ Ext.define('Summer.view.grid',{
 			autoLoad :true,//字段加载
 			proxy: {
 				type: 'ajax',
-				url:'data/grid.json',
+				url:'test/grid.json',
 				actionMethods:{read : 'GET'},
 				extraParams:{}, //参数
 				timeout:1200000,
@@ -258,7 +257,7 @@ Ext.define('Summer.view.grid',{
 			autoLoad:true,
 			proxy: {
 				type: 'ajax',
-				url:'php/deptajax.php?action=data',
+				url:'test/grid.json',
 				actionMethods:{read : 'POST'},
 				extraParams:{}
 			}

@@ -10,9 +10,7 @@ Ext.define('Summer.view.LogoTitle', {
   initComponent: function () {
     this.callParent();
     if (this.loadurl) {
-      this.getLoader().load({
-        url: this.loadurl
-      });
+      this.getLoader().load({url: this.loadurl});
     } else {
       console.error('Init LogoTitle Error! Please give me the logourl property!');
     }
@@ -30,7 +28,7 @@ Ext.define('Summer.view.LogoTitle', {
         cls: 'title',
       });
       loader.getTarget().add(title);
-      loader.getTarget().getEl().dom.href = logo.href;
+//      loader.getTarget().getEl().dom.href = logo.href;
       return true;
     }
   }
@@ -45,9 +43,7 @@ Ext.define('Summer.view.UserInfo', {
   initComponent: function () {
     this.callParent();
     if (this.loadurl) {
-      this.getLoader().load({
-        url: this.loadurl
-      });
+      this.getLoader().load({url: this.loadurl});
     } else {
       console.error('Init UserInfo Error! Please give the userurl property!');
     }
@@ -58,34 +54,6 @@ Ext.define('Summer.view.UserInfo', {
       var me = loader.getTarget();
       me.setIcon(user.photo);
       me.setText(user.name);
-      me.setMenu([
-        {
-          cls: 'menu_list',
-          text: '个人主页',
-          },
-        {
-          cls: 'menu_list',
-          icon: 'images/calendar.gif',
-          text: '修改密码',
-          },
-        {
-          cls: 'menu_list',
-          icon: 'images/edit.png',
-          text: '账号管理',
-          },
-        {
-          cls: 'menu_list',
-          icon: 'images/control_power_blue.png',
-          text: '退出系统',
-          handler: function () {
-            Ext.MessageBox.confirm('系统提示', '确定要退出吗？',
-              function (a) {
-                if (a == 'yes') {
-                  alert('退出成功');
-                }
-              });
-          }
-          }])
       return true;
     }
   }
@@ -104,12 +72,13 @@ Ext.define('Summer.view.TitleBar', {
     this.add({
       xtype: 'logotitle',
       region: 'west',
-      loadurl: this.logourl,
+      loadurl: this.logoUrl,
     });
     this.add({
       xtype: 'userinfo',
       region: 'east',
-      loadurl: this.userurl,
+      loadurl: this.userUrl,
+      menu: this.userMenu,
     });
   }
 });

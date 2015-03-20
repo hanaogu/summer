@@ -1,0 +1,23 @@
+[
+  {
+    "type": "west",
+    "name": "tongzhi",
+    "icon": "",
+    "url": "Test/formtag.js",
+    "columnWidth": 0.5,
+  },
+  {
+    "type": "east",
+    "name": "通知",
+    "icon": "",
+    "url": "Test/grid.js",
+    "columnWidth": 0.3,
+  },
+  {
+    "type": "south",
+    "name": "办公",
+    "icon": "",
+    "url": "Test/robot.js",
+    "columnWidth": 0.2,
+  }
+]
