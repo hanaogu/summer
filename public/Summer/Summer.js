@@ -68,7 +68,7 @@ var eastPanel = Ext.create('Summer.view.TabPanel', {
 //! 创建底部面板
 var southPanel = Ext.create('Summer.view.TabPanel', {
   region: 'south',
-  width: 200,
+  height: 128,
   loadurl: 'Test/panels.json',
 });
 
