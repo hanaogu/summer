@@ -20,7 +20,7 @@ var westPanel = Ext.create('Ext.tab.Panel', {
 });
 
 Ext.define('Summer.view.Widget', {
-  extend: 'Ext.container.Container',
+  extend: 'Ext.panel.Panel',
   xtype: 's-widget',
   loader: {
     renderer: 'component',
@@ -38,23 +38,6 @@ Ext.define('Summer.view.Center', {
   dashboard: Ext.create('Ext.dashboard.Dashboard', {
     title: '工作台',
     stateful: false,
-    columnWidths: [
-            0.35,
-            0.40,
-            0.25
-        ],
-    parts: {
-      swidget: {
-        viewTemplate: {
-          items: [
-            {
-              xtype: 's-widget',
-              loadurl: '{loadurl}',
-            }
-          ]
-        }
-      }
-    },
   }),
   initComponent: function () {
     this.callParent();
@@ -68,15 +51,17 @@ Ext.define('Summer.view.Center', {
       var widgets = Ext.JSON.decode(res.responseText);
       var me = loader.getTarget();
       Ext.each(widgets, function (widget) {
-        me.dashboard.addView({
-          type: 'swidget',
+        me.dashboard.add({
+          xtype: 's-widget',
+          collapsible: true,
           title: widget.name,
           hieght: widget.height,
           icon: widget.icon,
-          columnIndex: widget.column,
+          columnWidth: widget.columnWidth,
           loadurl: widget.url,
         });
       });
+      return true;
     }
   }
 });
@@ -111,7 +96,9 @@ Ext.onReady(function () {
     layout: 'border',
     items: [
       Ext.create('Summer.view.TitleBar', {
-        region: 'north'
+        region: 'north',
+        logourl: 'test/logo.json', //从后台框架获取logo图片和title等信息的地址
+        userurl: 'test/user.json',  //从后台框架获取用户头像和名称等信息的地址
       }),
       westPanel,
       {

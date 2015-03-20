@@ -6,9 +6,7 @@ Ext.define('KitchenSink.view.FormTag', {
 
 
     title: 'Select State(s)',
-    bodyPadding: 5,
     frame: true,
-    width: 600,
     layout: 'form',
     viewModel: {},
     items: [{
@@ -53,7 +51,4 @@ Ext.define('KitchenSink.view.FormTag', {
     }, {
         text: 'Cancel'
     }],
-  initComponent: function () {
-    this.callParent();
-  }
 });

@@ -4,23 +4,23 @@
     "name": "tongzhi",
     "icon": "images/tongzhi.png",
     "url": "KitchenSink/Formtag.js",
-    "column": 0,
+    "columnWidth": 0.5,
     "height": 300,
-    },
+  },
   {
     "type": "home",
     "name": "通知",
     "icon": "images/tongzhi.png",
-    "url": "KitchenSink/Formtag.js",
-    "column": 1,
+    "url": "Summer/grid.js",
+    "columnWidth": 0.3,
     "height": 600,
-    },
+  },
   {
     "type": "user",
     "name": "办公",
     "icon": "images/tongzhi.png",
     "url": "KitchenSink/Formtag.js",
-    "column": 2,
+    "columnWidth": 0.2,
     "height": 300,
-    }
-    ]
+  }
+]
