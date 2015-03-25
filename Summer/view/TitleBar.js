@@ -40,6 +40,35 @@ Ext.define('Summer.view.UserInfo', {
   cls: 'user_info',
   iconCls: 'user_photo',
   scale: 'medium',
+  userMenu: [
+    {
+      cls: 'menu_list',
+      text: '个人主页',
+    },
+    {
+      cls: 'menu_list',
+      icon: '',
+      text: '修改密码',
+    },
+    {
+      cls: 'menu_list',
+      icon: '',
+      text: '账号管理',
+    },
+    {
+      cls: 'menu_list',
+      icon: '',
+      text: '退出系统',
+      handler: function () {
+        Ext.MessageBox.confirm('系统提示', '确定要退出吗？',
+          function (a) {
+            if (a == 'yes') {
+              alert('退出成功');
+            }
+          });
+      }
+    }
+  ],
   initComponent: function () {
     this.callParent();
     if (this.loadurl) {
@@ -54,6 +83,7 @@ Ext.define('Summer.view.UserInfo', {
       var me = loader.getTarget();
       me.setIcon(user.photo);
       me.setText(user.name);
+      me.setMenu(me.userMenu);
       return true;
     }
   }
@@ -78,7 +108,6 @@ Ext.define('Summer.view.TitleBar', {
       xtype: 'userinfo',
       region: 'east',
       loadurl: this.userUrl,
-      menu: this.userMenu,
     });
   }
 });

@@ -21,6 +21,7 @@ Ext.define('Summer.view.MainCenter', {
   initComponent: function () {
     this.callParent();
     this.add(this.dashboard);
+    this.setActiveTab(0);
     this.getLoader().load({
       url: this.loadurl
     });

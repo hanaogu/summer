@@ -19,9 +19,9 @@ Ext.define('Summer.view.TabPanel', {
   extend: 'Ext.tab.Panel',
   collapsible: true,
   split: true,
-  tabBarHeaderPosition: 1,
+  tabBarHeaderPosition: 0,
   tabBar: {
-    flex: 20
+    flex:60
   },
   initComponent: function() {
     this.callParent();

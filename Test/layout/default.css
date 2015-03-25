@@ -55,10 +55,12 @@
 }
 
 .user_info.x-btn-focus.x-btn-default-medium {
-  background: none;
+
   box-shadow: none;
 }
+.user_info.x-btn-focus.x-btn-default-medium-focus{background:none;}
 
+.user_info.x-focus.x-btn-focus.x-btn-default-medium-focus.x-btn-menu-active{background:#579EC8;}
 .user_photo {
   background-size: 100% 100%;
   border-radius: 100%;
@@ -72,3 +74,20 @@
 .x-menu-item-default-focus {
   background: #438EB9;
 }
+
+
+#Navigation .x-tree-lines .x-tree-elbow{display:none;}
+#Navigation .x-grid-cell-inner{padding:10px 0 8px 30px;}
+
+#Navigation .x-grid-cell-inner:before {
+content: "";
+display: block;
+position: absolute;
+z-index: 1;
+left: 15px;
+top:13px;
+bottom: 0;
+background:url(../images/caret-right.png) no-repeat;width:6px;height:7px;}
+
+#Navigation .x-grid-item-selected{background-color:#c1ddf1}
+#Navigation .x-grid-item-focused .x-grid-cell-inner:before{background:url(../images/caret-right_.png) no-repeat;border:0;}

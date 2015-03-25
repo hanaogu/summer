@@ -2,6 +2,7 @@ Ext.define('Summer.view.Navigation', {
   extend: 'Ext.panel.Panel',
   xtype: 'navtree',
   layout: 'accordion',
+  id:'Navigation',
   initComponent: function () {
     this.callParent();
     this.getLoader().load({
