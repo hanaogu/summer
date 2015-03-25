@@ -1,12 +1,5 @@
 [
   {
-    "type": "west",
-    "name": "tongzhi",
-    "icon": "",
-    "url": "Test/formtag.js",
-    "columnWidth": 0.5,
-  },
-  {
     "type": "east",
     "name": "通知",
     "icon": "",

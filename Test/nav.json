@@ -8,7 +8,7 @@
         "id": "001-01",
         "text": "任务",
         "icon": "",
-        "url": "Test/formtag.js"
+        "url": "Test/grid.js"
       },
       {
         "id": "001-02",
@@ -27,7 +27,7 @@
         "id": "002-01",
         "text": "考勤统计",
         "icon": "",
-        "url": "js/gridss.js"
+        "url": "Test/grid.js"
       },
       {
         "id": "002-02",

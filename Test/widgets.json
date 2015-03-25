@@ -1,17 +1,10 @@
 [
   {
     "type": "home",
-    "name": "tongzhi",
-    "icon": "",
-    "url": "Test/formtag.js",
-    "columnWidth": 0.5,
-  },
-  {
-    "type": "home",
     "name": "通知",
     "icon": "",
     "url": "Test/grid.js",
-    "columnWidth": 0.3,
+    "columnWidth": 0.8,
   },
   {
     "type": "user",
