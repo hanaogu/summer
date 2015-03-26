@@ -3,7 +3,7 @@
     "type": "home",
     "name": "通知",
     "icon": "",
-    "url": "Test/grid.js",
+    "url": "Test/datagrid.js",
     "columnWidth": 0.8,
   },
   {
