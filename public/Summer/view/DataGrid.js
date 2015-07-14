@@ -1,4 +1,4 @@
-Ext.define('Summer.view.DataGrid1', {
+Ext.define('Summer.view.DataGrid', {
   extend: 'Ext.grid.Panel',
   initComponent: function () {
     var me = this;

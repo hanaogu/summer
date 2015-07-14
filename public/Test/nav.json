@@ -16,6 +16,13 @@
         "icon": "",
         "url": "Test/grid.js"
       }
+      ,
+      {
+        "id": "001-03",
+        "text": "通讯录",
+        "icon": "",
+        "url": "addressbook/addressbook.js"
+      }
     ]
   },
   {

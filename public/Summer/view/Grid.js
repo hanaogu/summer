@@ -1,4 +1,4 @@
-Ext.define('Summer.view.Grid1', {
+Ext.define('Summer.view.Grid', {
     extend: 'Ext.container.Container',
     initComponent: function() {
         this.callParent();
