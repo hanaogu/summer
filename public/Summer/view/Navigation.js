@@ -1,3 +1,5 @@
+/* global Summer */
+/* global Ext */
 Ext.define('Summer.view.Navigation', {
   extend: 'Ext.panel.Panel',
   xtype: 'navtree',
@@ -21,6 +23,7 @@ Ext.define('Summer.view.Navigation', {
             itemclick: function (a, node) {
               var d = node.data;
               if (d.leaf == true) {
+                //console.log(Summer);
                 Summer.addTabs(d.id, d.text, d.url, d.icon);
               }
             }

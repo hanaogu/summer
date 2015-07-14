@@ -1,9 +1,5 @@
-Ext.BLANK_IMAGE_URL = 'images/white.gif'; //定义空白图片（防止没有联网，图标出不来）
-
-Summer = {}; //定义全局变量，承载全局函数
-
 //! 主视图类，派生于Ext的Viewport
-Ext.define('MainLayout', {
+Ext.define('Summer.view.Viewport', {
   extend: 'Ext.container.Viewport',
   layout: 'border',
   initComponent: function () {
@@ -12,7 +8,7 @@ Ext.define('MainLayout', {
 
     //先发起请求得到主界面的布局信息
     Ext.Ajax.request({
-      url: this.loadUrl,
+      url: me.loadUrl,
       success: function (res) {
         var layout = Ext.JSON.decode(res.responseText);
 
@@ -64,15 +60,5 @@ Ext.define('MainLayout', {
   },
 });
 
-//! 页面装载完毕后创建布局，将各个板块放入布局
-Ext.onReady(function () {
-  Summer.mainLayout = Ext.create('MainLayout', {
-    loadUrl: 'Test/layout/default.json',
-  });
-});
 
-//! 所有的全局函数从这儿开始写
-//! addTabs，负责根据url将主工作面板添加到主工作区的tab容器里
-Summer.addTabs = function (id, name, url, icon) {
-  return Summer.mainLayout.addTabs(id, name, url, icon);
-};
+

@@ -1,4 +1,4 @@
-Ext.define('Summer.view.Grid', {
+Ext.define('Summer.view.Grid1', {
     extend: 'Ext.container.Container',
     initComponent: function() {
         this.callParent();
@@ -151,10 +151,10 @@ Ext.define('Summer.view.Grid', {
                 value: val,
                 id: e.record.data.id
             };
-            $.post('http://localhost/erpos22/php/gridajax.php?action=saverow', data,
-            function() {
-                Ext.example.msg('提示', '保存成功');
-            });
+            // $.post('http://localhost/erpos22/php/gridajax.php?action=saverow', data,
+            // function() {
+            //     Ext.example.msg('提示', '保存成功');
+            // });
         };
 
         //新增
