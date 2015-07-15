@@ -7,10 +7,17 @@
     "columnWidth": 0.8,
   },
   {
-    "type": "user",
-    "name": "办公",
+    "type": "home",
+    "name": "通知",
     "icon": "",
-    "url": "Test/robot.js",
+    "url": "Test/datagrid.js",
     "columnWidth": 0.2,
+  },
+  {
+    "type": "home",
+    "name": "通知",
+    "icon": "",
+    "url": "Test/datagrid.js",
+    "columnWidth": 1,
   }
 ]

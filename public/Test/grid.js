@@ -1,6 +1,6 @@
 Ext.create('Summer.view.Grid', {
   title:'Grid封装测试',
-  dataUrl: 'http://localhost/erpos22/php/gridajax.php?action=data',
+  dataUrl: 'Test/grid.json',
   fields:['id','user','name','sex','tel','email','optdt','deptid','deptname','birth'],
   pageSize: 3,
   toolbar:[{top:'true'},{bottom:'true'},],

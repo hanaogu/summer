@@ -30,15 +30,6 @@
         collapsible: true,
         loadurl: "Test/nav.json",
       },
-    },
-    {
-      stype: "Summer.view.TabPanel",
-      cssId: "eastpanel",
-      region: "east",
-      params: {
-        width: 200,
-        loadurl: "Test/widgets.json",
-      },
-    },
+    }
   ],
 }
